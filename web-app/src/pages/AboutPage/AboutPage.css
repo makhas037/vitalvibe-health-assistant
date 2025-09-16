@@ -1,0 +1,16 @@
+.AboutPage-container {
+  padding: 20px;
+  text-align: center;
+  background: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.AboutPage-container h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.AboutPage-container p {
+  color: #666;
+}

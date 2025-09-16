@@ -1,0 +1,165 @@
+/* New layout for main content and history panel */
+.page-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.routines-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-content: start;
+}
+
+/* Updated Routine Card Styles */
+.routine-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius);
+    padding: var(--card-padding);
+    display: flex;
+    flex-direction: column;
+}
+
+.routine-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.routine-header h3 { font-size: 18px; font-weight: 600; }
+.header-actions { display: flex; align-items: center; gap: 16px; }
+.routine-time { font-size: 14px; color: var(--color-text-secondary); }
+
+.delete-btn {
+    color: var(--color-text-secondary);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+.delete-btn:hover { color: var(--color-red); }
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--color-secondary);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+.activity-item:hover { background-color: var(--color-surface-light); }
+.activity-item:last-child { border-bottom: none; }
+
+.activity-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+.activity-item.completed .activity-check {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+.activity-name { flex-grow: 1; transition: color 0.2s ease; }
+.activity-item.completed .activity-name {
+    text-decoration: line-through;
+    color: var(--color-text-secondary);
+}
+
+.activity-duration { color: var(--color-text-secondary); font-size: 14px; }
+
+.routine-progress {
+    margin-top: auto;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+.progress-bar {
+    height: 8px;
+    background-color: var(--color-secondary);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+.progress-fill {
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 4px;
+    transition: width 0.4s ease-in-out;
+}
+
+/* --- History Panel Styles --- */
+.history-panel {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius);
+    padding: var(--card-padding);
+    height: fit-content;
+}
+.history-panel h3 { font-size: 18px; font-weight: 600; }
+.history-panel > p { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px; }
+.history-list { display: flex; flex-direction: column; gap: 12px; }
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-surface-light);
+    padding: 12px;
+    border-radius: 6px;
+}
+.history-item span { font-weight: 500; }
+.history-item .btn--secondary {
+    padding: 6px 12px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.no-history-text { font-size: 14px; color: var(--color-text-secondary); text-align: center; padding: 20px 0; }
+
+/* Modal Form Styles */
+.form-container { display: flex; flex-direction: column; gap: 16px; }
+/* ... (keep other modal form styles) ... */
+
+/* ... (keep all the existing styles) ... */
+
+/* --- Add these new styles for the modal --- */
+.activity-input-group {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.activity-input-group input:first-of-type {
+    flex-grow: 1;
+}
+.activity-input-group input:last-of-type {
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.remove-activity-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 5px;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.remove-activity-btn:hover {
+    color: var(--color-red);
+}

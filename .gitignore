@@ -1,0 +1,7 @@
+# Node and build
+node_modules
+/web-app/node_modules
+/server/node_modules
+dist
+.env
+.DS_Store

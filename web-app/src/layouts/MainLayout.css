@@ -1,0 +1,129 @@
+.main-content {
+  flex-grow: 1;
+  padding: 40px;
+  overflow-x: hidden; /* Important: prevents horizontal scrollbar during animation */
+  position: relative;
+}
+
+.content-section-wrapper {
+  animation: slideIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ... keep other styles like .section-header and .btn ... */
+.section-header {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.section-header p {
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: #121212;
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-secondary);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-secondary);
+}
+
+
+/* ... keep all styles above this line the same ... */
+
+/* Updated styles for the pop-up notification in the bottom-right */
+#nav-notification {
+  position: fixed;
+  bottom: 30px; /* Changed from top to bottom */
+  right: 40px;
+  
+  /* Glassmorphism Style */
+  background: rgba(44, 44, 46, 0.5); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary); 
+
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  
+  /* Link to the new slide-up and fade animation */
+  animation: slideUpFade 3s ease-in-out forwards;
+}
+
+/* New animation: slides up, holds, and fades out */
+@keyframes slideUpFade {
+  0% {
+    transform: translateY(100px); /* Start below the screen */
+    opacity: 0;
+  }
+  15%, 85% { /* Slide up quickly and hold the position */
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0); /* Maintain position while fading */
+    opacity: 0;
+  }
+}
+/* New top-down animation 
+@keyframes slideDownFade {
+  0% {
+    transform: translateY(120px);
+    opacity: 0;
+  }
+  15% {
+    transform: translateY(240); /* Slide in 
+    opacity: 1;
+  }
+  85% {
+    transform: translateY(0); /* Hold position 
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120px); /* Slide out 
+    opacity: 0;
+  }
+  */
+

@@ -1,0 +1,138 @@
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.metric-card {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    padding: var(--card-padding);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid var(--color-secondary);
+}
+
+.metric-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.metric-icon.heart-rate { background-color: rgba(229, 62, 62, 0.1); color: #e53e3e; }
+.metric-icon.steps { background-color: rgba(66, 153, 225, 0.1); color: #4299e1; }
+.metric-icon.hydration { background-color: rgba(79, 209, 197, 0.1); color: var(--color-primary); }
+.metric-icon.sleep { background-color: rgba(159, 122, 234, 0.1); color: #9f7aea; }
+.metric-icon svg { width: 24px; height: 24px; }
+
+.metric-info h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.metric-value {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 4px 0;
+}
+
+.metric-unit {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    font-weight: 400;
+}
+
+.metric-status {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+}
+.metric-status.normal { background-color: rgba(72, 187, 120, 0.1); color: var(--color-green); }
+.metric-status.warning { background-color: rgba(245, 158, 11, 0.1); color: var(--color-orange); }
+
+.metric-progress {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-secondary);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 4px;
+}
+
+.dashboard-charts {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.chart-card, .notifications-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius);
+    padding: var(--card-padding);
+}
+
+.chart-card h3, .notifications-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.chart-wrapper {
+    height: 300px;
+}
+
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.notification-icon {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-item.hydration .notification-icon { background-color: rgba(79, 209, 197, 0.1); }
+.notification-item.exercise .notification-icon { background-color: rgba(245, 158, 11, 0.1); }
+.notification-item.sleep .notification-icon { background-color: rgba(159, 122, 234, 0.1); }
+
+.notification-content p {
+    font-size: 14px;
+}
+
+.notification-content small {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
